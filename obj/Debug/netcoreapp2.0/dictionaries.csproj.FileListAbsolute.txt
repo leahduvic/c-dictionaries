@@ -1,0 +1,3 @@
+/Users/Leah/workspace/csharp/exercises/dictionaries/obj/Debug/netcoreapp2.0/dictionaries.csproj.CoreCompileInputs.cache
+/Users/Leah/workspace/csharp/exercises/dictionaries/obj/Debug/netcoreapp2.0/dictionaries.AssemblyInfoInputs.cache
+/Users/Leah/workspace/csharp/exercises/dictionaries/obj/Debug/netcoreapp2.0/dictionaries.AssemblyInfo.cs
