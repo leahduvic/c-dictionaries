@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace dictionaries
 {
@@ -36,27 +37,28 @@ namespace dictionaries
                 purchases.Add((ticker: "BAMXF", shares: 130, price: 19.02));
                 purchases.Add((ticker: "BAMXF", shares: 40, price: 19.02));
 
-                        // Dictionary<string,string>.ContainsKey Method (TKeDy)
-                double finalAmount = 0;
-
-                foreach ((string ticker, int shares, double price) purchase in purchases)
-                    {
-                    // Does the company name key already exist in the report dictionary?
-                    if (stocks.ContainsKey("GM") == true) 
-                    {
-                        double amount = purchase.shares * purchase.price;
-                        amount += finalAmount;
-                        
-                        Console.WriteLine($@"
-                            Stock Value: ${finalAmount}
-                        ");
-
-                    }
-                    // If it does, update the total valuation
                     
+                // double final = 0;
+            
+            Dictionary<string, double> co = new Dictionary<string, double>();
 
-                    // If not, add the new key and set its value
-                    }
+                    foreach ((string ticker, int shares, double price) purchase in purchases)
+                        {
+                        string company = stocks[purchase.ticker];
+                        double total = purchase.shares * purchase.price;
+                        if (!co.ContainsKey(company)) {
+                            co.Add(company, total);
+                        } else {
+                            co[company] += total;
+                        }
+                        
+                        Console.WriteLine(co);
+                        }
+                foreach(KeyValuePair<string, double> details in co) {
+                    Console.WriteLine("{0}, {1}", details.Key, details.Value);
+                }
+                
         }
+        
     }
 }
